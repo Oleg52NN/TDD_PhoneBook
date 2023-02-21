@@ -5,8 +5,11 @@ import java.util.TreeMap;
 
 public class PhoneBook {
     public static Map<String,String> phoneBook = new TreeMap<>();
-    public static int add(String name, String phone){
-        phoneBook.put(name, phone);
+    public static int add(String name, String phoneNumber){
+        phoneBook.put(name, phoneNumber);
         return phoneBook.size();
+    }
+    public static String findByNumber(String phoneNumber){
+        return null;
     }
 }
