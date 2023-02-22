@@ -1,9 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-
-import static org.example.PhoneBook.add;
-import static org.example.PhoneBook.findByNumber;
+import static org.example.PhoneBook.*;
 
 public class PhoneBookTest {
     @Test
@@ -23,14 +21,14 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void phoneNumberTestOne(){
+    public void findByNumberTestOne(){
         add("Федя", "+7-955-333-22-11");
         add("Катя", "+7-977-333-22-11");
         String expected = "Катя";
         Assert.assertEquals(expected, findByNumber("+7-977-333-22-11"));
     }
     @Test
-    public void phoneNumberTestTwo(){
+    public void findByNumberTestTwo(){
         add("Федя", "+7-955-333-22-11");
         add("Катя", "+7-977-333-22-11");
         add("Ира", "+7-977-333-22-11");
@@ -38,5 +36,16 @@ public class PhoneBookTest {
         String expected = "Ира";
         Assert.assertEquals(expected, findByNumber("+7-977-333-22-11"));
     }
+    @Test
+    public void findByNameTestOne(){
+        add("Ираида", "+7-955-333-22-11");
+        add("Ира", "+7-922-333-22-11");
+        add("Илона", "+7-933-333-22-11");
+        add("Изольда", "+7-988-333-22-11");
+
+        String expected = "+7-988-333-22-11";
+        Assert.assertEquals(expected, findByName("Изольда"));
+    }
+
 
 }
