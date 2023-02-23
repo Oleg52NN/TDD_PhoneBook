@@ -46,6 +46,15 @@ public class PhoneBookTest {
         String expected = "+7-988-333-22-11";
         Assert.assertEquals(expected, findByName("Изольда"));
     }
+    @Test
+    public void printAllNamesTest(){
+        add("Ираида", "+7-955-333-22-11");
+        add("Ира", "+7-922-333-22-11");
+
+        String expected = ("Ира, +7-922-333-22-11 \nИраида, +7-955-333-22-11");
+        Assert.assertEquals(expected,printAllNames());
+
+    }
 
 
 }
