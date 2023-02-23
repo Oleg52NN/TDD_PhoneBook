@@ -23,6 +23,12 @@ public class PhoneBook {
     return phoneBook.get(name);
     }
     public static String printAllNames(){
-      return null;
+        StringBuilder mapToString = new StringBuilder();
+        for (Map.Entry<String, String>
+                entry : phoneBook.entrySet()) {
+            mapToString.append(String.format(entry.getKey() + ", " + entry.getValue()) + "\n");
+        }
+        System.out.println(mapToString);
+        return mapToString.toString();
     }
 }
